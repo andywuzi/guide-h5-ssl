@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            background-color: #f6f8fa;
+            color: #1e2a3a;
+        }
+
+        /* 深色头图 hero */
+        .hero {
+            background: linear-gradient(135deg, #0b1a2b 0%, #1b2d44 100%);
+            color: #eef3f9;
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 strong {
+            font-weight: 600;
+            color: #f0c27a;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 0.75rem;
+            font-size: 1.1rem;
+            opacity: 0.88;
+        }
+
+        .hero .tag {
+            display: inline-block;
+            background: rgba(240, 194, 122, 0.15);
+            border: 1px solid rgba(240, 194, 122, 0.3);
+            border-radius: 30px;
+            padding: 0.25rem 1.2rem;
+            font-size: 0.9rem;
+            color: #f0c27a;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 浅色正文区 */
+        .section {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 2.4rem 2rem;
+            margin: 2rem auto;
+        }
+
+        .section h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            border-left: 4px solid #f0c27a;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            color: #0b1a2b;
+        }
+
+        .section h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.4rem 0 0.6rem;
+            color: #1e2a3a;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: #f9fafc;
+            border-radius: 14px;
+            padding: 1.3rem 1.5rem;
+            border: 1px solid #ecedf0;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .card .icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        .card h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #3f4d5e;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #b8863d;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #8f6b2e;
+            border-bottom-color: #8f6b2e;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e8eaee;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #0b1a2b;
+        }
+
+        .faq-a {
+            font-size: 0.95rem;
+            color: #3f4d5e;
+        }
+
+        .footer-links {
+            background: #ffffff;
+            border-top: 1px solid #e2e5ea;
+            padding: 2rem 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .footer-links .inner {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            color: #4b5a6e;
+        }
+
+        .footer-links .inner p {
+            margin: 0.4rem 0;
+        }
+
+        .footer-links .sep {
+            display: inline-block;
+            margin: 0 0.6rem;
+            color: #b0b9c7;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .section {
+                padding: 1.8rem 1.2rem;
+                margin: 1.2rem auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2.8rem 1rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* 小点缀 */
+        .badge {
+            display: inline-block;
+            background: #eef3f9;
+            color: #1e2a3a;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.7rem;
+            border-radius: 50px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<!-- hero 区：深色头图 -->
+<section class="hero">
+    <h1>从 <strong>稳定入口</strong> 开始<br>清晰了解 <strong>雷速</strong></h1>
+    <p>一个页面说明，帮您快速建立对这个站点的认知。不绕弯，讲实际。</p>
+    <span class="tag">落地页 · 说明向</span>
+</section>
+
+<div class="container">
+
+    <!-- 优势区：卡片式 -->
+    <section class="section">
+        <h2>为什么先看这里</h2>
+        <div class="grid-2">
+            <div class="card">
+                <div class="icon">📌</div>
+                <h4>入口简洁</h4>
+                <p>没有冗余导航和浮层干扰，从首页就能直接找到您关心的内容。页面结构经过梳理，分区清晰。</p>
+            </div>
+            <div class="card">
+                <div class="icon">⚙️</div>
+                <h4>信息稳定</h4>
+                <p>呈现的内容以实用说明为主，避免频繁变动带来的混淆。长期维护，保持索引与描述一致。</p>
+            </div>
+            <div class="card">
+                <div class="icon">🧭</div>
+                <h4>自然引导</h4>
+                <p>通过分类和常见问题，让您逐步了解网站定位。无需猜测，每个板块都有实际指向。</p>
+            </div>
+            <div class="card">
+                <div class="icon">📄</div>
+                <h4>页面说明</h4>
+                <p>每个主要区域都附带简短解释，帮助首次访问者快速建立预期。透明、克制，不夸大。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区：从稳定入口和页面说明的角度展开 -->
+    <section class="section">
+        <h2>关于这个站 · 说明</h2>
+        <p>网站 <a href="https://zh-beta-leisu.com">雷速</a> 的首页主要承担两项功能：一是作为稳定入口，让用户无论通过哪种方式到达，都能看见一致的内容框架；二是提供页面说明，帮助用户判断后续操作方向。这种设计背后是“先理解，再点击”的思路。</p>
+
+        <h3>稳定入口意味着什么</h3>
+        <p>入口不止是链接，更是预期管理。这里的页面结构长期保持，不依赖临时弹窗或跳转。每个板块标题、卡片内容都经过整理，您看到的描述与实际内容对应。即便在不同时段访问，核心说明也不会无故消失或错位。</p>
+
+        <h3>页面说明如何呈现</h3>
+        <p>说明分散在卡片、FAQ 和段落中，但整体语调一致：平实、直接。我们不使用“最全”“第一”这类限定词，而是用具体描述展现网站的实际作用。您可以在下方 FAQ 摘要中看到几个典型问题，更多细节可以前往 <a href="https://zh-beta-leisu.com">雷速</a> 浏览。</p>
+    </section>
+
+    <!-- FAQ 摘要区 -->
+    <section class="section">
+        <h2>常见问题 · 摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">这个网站主要提供什么？</div>
+            <div class="faq-a">网站围绕信息整理和索引展开，帮助用户通过清晰分类找到相关内容。具体栏目结构可在首页直接查看。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面上的链接都可靠吗？</div>
+            <div class="faq-a">链接指向的内容会定期核对，确保指向稳定。如果发现异常，会及时更新说明。您可以通过 <a href="https://zh-beta-leisu.com">雷速</a> 反馈。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">为什么页面强调“稳定入口”？</div>
+            <div class="faq-a">因为入口的稳定性影响使用体验。这个站点的设计目标是：无论从哪个渠道进入，首页都呈现统一、可预期的信息框架，减少困惑。</div>
+        </div>
+        <div style="margin-top:1rem; font-size:0.9rem; color:#5f6e80;">
+            <span>🔍 更多 FAQ 可直接在 <a href="https://zh-beta-leisu.com">雷速</a> 内查看完整列表。</span>
+        </div>
+    </section>
+
+</div>
+
+<!-- 底部链接区 -->
+<footer class="footer-links">
+    <div class="inner">
+        <p>本页面为说明介绍页 · 内容聚焦稳定入口与页面说明</p>
+        <p>
+            <a href="https://zh-beta-leisu.com">雷速</a>
+            <span class="sep">·</span>
+            <span>首页</span>
+            <span class="sep">·</span>
+            <span>说明文档</span>
+            <span class="sep">·</span>
+            <span>联系方式</span>
+        </p>
+        <p style="font-size:0.85rem; color:#7d8b9e; margin-top:0.8rem;">
+            © 2025 · 内容仅供参考，不构成指引
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
